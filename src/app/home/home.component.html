@@ -1,1 +1,14 @@
-<p>home works!</p>
+<div>
+  <p>Pretraži telefon:</p>
+  <input type="text" [(ngModel)]="search" />
+  <p>Pretražuje se: {{ search }}</p>
+</div>
+
+<div class="products">
+  <app-product
+    *ngFor="let p of products"
+    [product]="p"
+    (addToCart)="onAddToCart($event)"
+    (removeFromCart)="onRemoveFromCart($event)"
+  ></app-product>
+</div>
